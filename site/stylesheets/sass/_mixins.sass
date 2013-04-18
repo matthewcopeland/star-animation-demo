@@ -1,0 +1,26 @@
+@mixin box-sizing( $box-size )
+  -webkit-box-sizing: ( $box-size )
+  -khtml-box-sizing: ( $box-size )
+  -icab-box-sizing: ( $box-size )
+  -moz-box-sizing: ( $box-size )
+  -o-box-sizing: ( $box-size )
+  box-sizing: ( $box-size )
+
+
+
+@mixin linear-gradient ( $start-point, $stop1, $stop2 )
+  background-image: -webkit-linear-gradient( $start-point, $stop1, $stop2 )
+  background-image: -moz-linear-gradient( $start-point, $stop1, $stop2 )
+  background-image: -ms-linear-gradient( $start-point, $stop1, $stop2 )
+  background-image: linear-gradient( $start-point, $stop1, $stop2 )
+
+
+
+@mixin animation ( $animation )
+  -webkit-animation: ( $animation )
+  -moz-animation: ( $animation )
+  -ms-animation: ( $animation )
+  animation: ( $animation )
+
+
+

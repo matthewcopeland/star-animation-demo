@@ -1,0 +1,85 @@
+$gutter: 20px;
+
+
+$campfire-size: 100px;
+#campfire {
+  position: fixed;
+  right: $gutter;
+  bottom: $gutter/2;
+  height:  $campfire-size;
+  width: $campfire-size;
+  background: url(/images/campfire.svg) center center no-repeat;
+  background-size: contain;
+}//#campfire
+
+
+
+//------------------------------------------------------------------
+// stars
+
+$star-size: 120px;
+.star {
+  position: fixed;
+  height: $star-size;
+  width: $star-size;
+  background: url(/images/star.svg) center center no-repeat;
+  background-size: contain;
+}//.star
+
+
+
+//-----------------------------
+// animation
+$star-start-point-x: $gutter + ($campfire-size/2 - $star-size/2);
+$star-start-point-y: 110%;
+
+
+
+$star-end-point-x: 100%;
+@function star-ending-point-x ($i) {
+  @return $star-end-point-x - (25% * $i)
+}
+
+
+
+$star-end-point-y: 4%;
+@function star-ending-point-y ($i) {
+  @return $star-end-point-y + (3% * $i)
+}
+
+
+$star-count: 3;
+@for $i from 1 through $star-count {
+  .star {
+    &:nth-of-type(#{$i}) {
+      top: star-ending-point-y($i);
+      right:  star-ending-point-x($i);
+      -webkit-animation: risingstar-#{$i} #{4 + $i*2}s linear, spinner #{4 + $i*2}s infinite linear;
+    }//nth-of-type
+  }//star
+
+
+
+  @-webkit-keyframes risingstar-$i {
+    0% {
+      right: $star-start-point-x;
+      top: $star-start-point-y;
+    }
+
+    40% {
+      right: $star-start-point-x;
+    }
+
+    100% {
+      right:  star-ending-point-x($i);
+      top: star-ending-point-y($i);
+    }
+  }//keyframes
+}//@for
+
+
+
+@-webkit-keyframes spinner {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
