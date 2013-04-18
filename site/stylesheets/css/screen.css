@@ -17,6 +17,18 @@ ol, ul {
   list-style: none;
   list-style-position: inside; }
 
+#github-ribbon {
+  position: fixed;
+  top: 0;
+  right: 0; }
+
+.night-sky {
+  background-image: -webkit-linear-gradient(top, #070d10 70%, #162934);
+  background-image: -moz-linear-gradient(top, #070d10 70%, #162934);
+  background-image: -ms-linear-gradient(top, #070d10 70%, #162934);
+  background-image: linear-gradient(top, #070d10 70%, #162934);
+  background-attachment: fixed; }
+
 #campfire {
   position: fixed;
   right: 20px;
@@ -99,10 +111,3 @@ ol, ul {
   left: 10px;
   background: url(/images/tree.svg) left bottom no-repeat;
   background-size: contain; }
-
-.night-sky {
-  background-image: -webkit-linear-gradient(top, #070d10 70%, #162934);
-  background-image: -moz-linear-gradient(top, #070d10 70%, #162934);
-  background-image: -ms-linear-gradient(top, #070d10 70%, #162934);
-  background-image: linear-gradient(top, #070d10 70%, #162934);
-  background-attachment: fixed; }
